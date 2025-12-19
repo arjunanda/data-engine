@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"net/url"
 	"strings"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -16,6 +17,34 @@ type MySQLConnector struct {
 
 // NewMySQLConnector creates a new MySQL connector
 func NewMySQLConnector(dsn string) (*MySQLConnector, error) {
+	// Normalize DSN
+	// 1. Handle mysql:// scheme
+	if strings.HasPrefix(dsn, "mysql://") {
+		u, err := url.Parse(dsn)
+		if err == nil {
+			userInfo := ""
+			if u.User != nil {
+				userInfo = u.User.String() + "@"
+			}
+			path := strings.TrimPrefix(u.Path, "/")
+			dsn = fmt.Sprintf("%stcp(%s)/%s", userInfo, u.Host, path)
+			if u.RawQuery != "" {
+				dsn += "?" + u.RawQuery
+			}
+		}
+	} else if strings.Contains(dsn, "@") && strings.Contains(dsn, "/") && !strings.Contains(dsn, "(") {
+		// 2. Handle simplified format: user:pass@host:port/db
+		// If it has @ and / but no ( ), assume TCP
+		parts := strings.SplitN(dsn, "@", 2)
+		rest := parts[1]
+		pathParts := strings.SplitN(rest, "/", 2)
+		if len(pathParts) == 2 {
+			addr := pathParts[0]
+			db := pathParts[1]
+			dsn = fmt.Sprintf("%s@tcp(%s)/%s", parts[0], addr, db)
+		}
+	}
+
 	db, err := sql.Open("mysql", dsn)
 	if err != nil {
 		return nil, fmt.Errorf("failed to open mysql connection: %w", err)
