@@ -1,0 +1,50 @@
+{
+  "name": "data-engine",
+  "version": "1.0.0",
+  "description": "Production-ready Node.js package for importing and exporting massive datasets with a Go-based engine",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "postinstall": "node install.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data",
+    "import",
+    "export",
+    "csv",
+    "jsonl",
+    "parquet",
+    "database",
+    "postgres",
+    "mysql",
+    "streaming",
+    "big-data",
+    "etl"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/data-engine.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "install.js",
+    "bin/",
+    "README.md"
+  ],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
+}
