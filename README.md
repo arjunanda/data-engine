@@ -15,7 +15,7 @@ Production-ready Node.js package for importing and exporting **massive datasets*
 ## Installation
 
 ```bash
-npm install data-engine
+npm install @arjunanda/data-engine
 ```
 
 The package automatically downloads the appropriate prebuilt binary for your platform during installation.
@@ -31,7 +31,7 @@ The package automatically downloads the appropriate prebuilt binary for your pla
 ### Import CSV to PostgreSQL
 
 ```javascript
-const { importData } = require("data-engine");
+const { importData } = require("@arjunanda/data-engine");
 
 await importData({
   file: "/data/huge-dataset.csv",
@@ -46,7 +46,7 @@ await importData({
 ### Export Database to JSONL
 
 ```javascript
-const { exportData } = require("data-engine");
+const { exportData } = require("@arjunanda/data-engine");
 
 await exportData({
   output: "/data/export.jsonl",
@@ -71,7 +71,7 @@ import {
   exportData,
   ImportOptions,
   ExportOptions,
-} from "data-engine";
+} from "@arjunanda/data-engine";
 
 // Full type safety and autocomplete
 const options: ImportOptions = {
@@ -318,8 +318,8 @@ The engine outputs progress to stderr:
 If the postinstall script fails to download the binary:
 
 1. Manually download from [GitHub Releases](https://github.com/yourusername/data-engine/releases)
-2. Place in `node_modules/data-engine/bin/`
-3. Make executable: `chmod +x node_modules/data-engine/bin/data-engine`
+2. Place in `node_modules/@arjunanda/data-engine/bin/`
+3. Make executable: `chmod +x node_modules/@arjunanda/data-engine/bin/data-engine`
 
 ### XLSX file too large
 

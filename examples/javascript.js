@@ -1,4 +1,4 @@
-const { importData, exportData } = require('./index');
+const { importData, exportData } = require('../index');
 
 /**
  * Example: Import CSV to PostgreSQL

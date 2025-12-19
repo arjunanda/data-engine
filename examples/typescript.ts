@@ -4,7 +4,7 @@
  * This file demonstrates how to use the data-engine package with TypeScript
  */
 
-import { importData, exportData, ImportOptions, ExportOptions } from 'data-engine';
+import { importData, exportData, ImportOptions, ExportOptions } from '../index';
 
 /**
  * Example 1: Import CSV to PostgreSQL with full type safety

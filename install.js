@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const GITHUB_REPO = 'yourusername/data-engine';
+const GITHUB_REPO = 'arjunanda/data-engine';
 const VERSION = require('./package.json').version;
 
 /**
