@@ -1,6 +1,6 @@
 {
   "name": "@arjunanda/data-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready Node.js package for importing and exporting massive datasets with a Go-based engine",
   "main": "index.js",
   "types": "index.d.ts",

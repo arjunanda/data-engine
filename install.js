@@ -38,10 +38,11 @@ async function install() {
   
   // Construct binary name
   let binaryName = 'data-engine';
-  const remoteBinaryName = `data-engine-${mappedPlatform}-${mappedArch}`;
+  let remoteBinaryName = `data-engine-${mappedPlatform}-${mappedArch}`;
   
   if (platform === 'win32') {
     binaryName += '.exe';
+    remoteBinaryName += '.exe';
   }
   
   // Create bin directory if it doesn't exist
