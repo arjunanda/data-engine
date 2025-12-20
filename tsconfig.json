@@ -17,7 +17,7 @@
   "include": [
     "*.ts",
     "index.d.ts"
-  ],
+, "sample/examples.ts"  ],
   "exclude": [
     "node_modules",
     "dist",

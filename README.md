@@ -1,5 +1,10 @@
 # Data Engine
 
+[![npm version](https://img.shields.io/npm/v/@arjunanda/data-engine.svg?style=flat-square)](https://www.npmjs.com/package/@arjunanda/data-engine)
+[![npm downloads](https://img.shields.io/npm/dm/@arjunanda/data-engine.svg?style=flat-square)](https://www.npmjs.com/package/@arjunanda/data-engine)
+[![License](https://img.shields.io/npm/l/@arjunanda/data-engine.svg?style=flat-square)](https://github.com/arjunanda/data-engine/blob/main/LICENSE)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/@arjunanda/data-engine?style=flat-square)](https://bundlephobia.com/package/@arjunanda/data-engine)
+
 Production-ready Node.js package for importing and exporting **massive datasets** (millions to billions of rows) with a high-performance Go engine.
 
 ## Features
